@@ -73,7 +73,7 @@ export function CartList() {
                       <td className="delete-icon">
                         {
                           <MdDelete
-                            size={20}
+                            size={25}
                             onClick={() => {
                               removeCartItem(cartItem.id);
                               toast.success("Item removido do carrinho!");
