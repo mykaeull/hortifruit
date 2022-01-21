@@ -4,6 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+## Aviso
+
+Devido ao bloqueio de cors da API, é preciso instalar uma extensão no Browser
+para carregar a API. Extensão: Allow CORS. Após instalada, você deve ativar
+a extensão clicando no botão "ON". Recarregue a página da aplicação e pronto, estará funcionando.
+
 In the project directory, you can run:
 
 ### `npm start`
