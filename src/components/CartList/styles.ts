@@ -17,6 +17,7 @@ export const Content = styled.div`
     justify-content: space-between;
     align-items: center;
     float: right;
+    gap: 1rem;
 
     button {
       background: var(--green);
@@ -30,6 +31,10 @@ export const Content = styled.div`
 
       &:hover {
         filter: brightness(0.8);
+      }
+
+      &.clear-cart {
+        background: var(--red);
       }
     }
   }

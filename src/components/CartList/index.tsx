@@ -87,6 +87,16 @@ export function CartList() {
               </tbody>
             </table>
             <footer>
+              <button
+                type="button"
+                className="clear-cart"
+                onClick={() => {
+                  closeCart();
+                  toast.success("Carrinho limpo com sucesso!");
+                }}
+              >
+                Limpar
+              </button>
               <Link to="/">
                 <button
                   type="button"

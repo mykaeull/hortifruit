@@ -13,7 +13,7 @@ export function Header() {
         <Link to="/" style={{ textDecoration: "none" }}>
           <div className="element-left">
             <GiFruitBowl color={"#FFF"} size={24} />
-            <p>hortifruit</p>
+            <p>hortifruti</p>
           </div>
         </Link>
         <Link to="/cart">

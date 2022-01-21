@@ -1,4 +1,11 @@
-import { createContext, useState, ReactNode, useContext } from "react";
+import {
+  createContext,
+  useState,
+  ReactNode,
+  useContext,
+  useRef,
+  useEffect,
+} from "react";
 
 interface CartContextProviderProps {
   children: ReactNode;
@@ -33,7 +40,29 @@ interface CartList {
 export const CartContext = createContext({} as CartContextData);
 
 export function CartContextProvider({ children }: CartContextProviderProps) {
-  const [cartList, setCartList] = useState<CartList[]>([]);
+  const [cartList, setCartList] = useState<CartList[]>(() => {
+    const storagedCart = localStorage.getItem("@HortiFruti:cart");
+
+    if (storagedCart) {
+      return JSON.parse(storagedCart);
+    }
+
+    return [];
+  });
+
+  const prevCartRef = useRef<CartList[]>();
+
+  useEffect(() => {
+    prevCartRef.current = cartList;
+  });
+
+  const cartPreviousValue = prevCartRef.current ?? cartList;
+
+  useEffect(() => {
+    if (cartPreviousValue !== cartList) {
+      localStorage.setItem("@HortiFruti:cart", JSON.stringify(cartList));
+    }
+  }, [cartList, cartPreviousValue]);
 
   function addCartItem(cartItem: CartItem) {
     if (
