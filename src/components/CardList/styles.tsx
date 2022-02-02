@@ -13,17 +13,22 @@ export const Content = styled.div`
     margin: 0 auto;
     text-align: center;
     font-size: 1.5rem;
-  }
 
-  > p {
-    text-align: center;
-    margin-top: 2rem;
-    cursor: pointer;
+    &.footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
 
-    transition: filter 0.2s;
+      p {
+        cursor: pointer;
+        font-size: 1rem;
+        transition: filter 0.2s;
 
-    &:hover {
-      filter: brightness(0.8);
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
     }
   }
 

@@ -6,6 +6,7 @@ import { BsFillBagPlusFill, BsInfoCircle } from "react-icons/bs";
 import { toast } from "react-toastify";
 import { useCart } from "../../context";
 import { InfoNutriModal } from "../InfoNutriModal";
+// import Spinner from "react-bootstrap/Spinner";
 
 interface Fruits {
   genus: string;
@@ -114,11 +115,13 @@ export function CardList() {
                   );
                 })}
               </ul>
-              {fruits.length !== totalFruits.length ? (
-                <p onClick={handleClickShowMore}>Ver mais...</p>
-              ) : (
-                <p onClick={handleClickShowLess}>Voltar pro início</p>
-              )}
+              <div className="footer">
+                {fruits.length !== totalFruits.length ? (
+                  <p onClick={handleClickShowMore}>Ver mais...</p>
+                ) : (
+                  <p onClick={handleClickShowLess}>Voltar pro início</p>
+                )}
+              </div>
             </>
           )}
         </Content>
